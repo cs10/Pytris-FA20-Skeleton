@@ -85,7 +85,8 @@ class Pytromino:
         fn ((tuple[int, int]) -> bool): 
             A function that takes in a tuple coordinate and returns boolean
 
-        Returns:
+        Returns
+        -------
         list[tuple[int, int]]:
             A list of tuple coordinates that satisfy fn
             
