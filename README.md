@@ -1,7 +1,3 @@
 # Pytris
 
-Still under development. Check Milestone for dates and plans
-
-- Pushing first release date back 1 week.
-
-A game emulating Tetris built with pygame.
+Project Spec can be found here: <https://docs.google.com/document/d/13Q-T4BKkL4M3crxeaDTKeBPikfKg3mlEIlbwJuTKTD8/edit?usp=sharing>
