@@ -61,18 +61,22 @@ class Board:
         list[any]:
             a list copy of column x
 
-        >>> board = Board(3, 2, grid=[i for i in range(6)])
+        >>> board = Board(3, 2, grid=[7, 6, 3, 9, 5, 2])
         >>> print(board)
         =====
-        0 1 2
-        3 4 5
+        7 6 3
+        9 5 2
         =====
-        >>> board.get_col(0)
-        [0, 3]
         >>> board.get_col(1)
+        [6, 5]
+        >>> board2 = Board(2, 2, grid=[1, 0, 4, 3])
+        >>> print(board2)
+        ===
+        1 0
+        4 3
+        ===
+        >>> board2.get_col(0)
         [1, 4]
-        >>> board.get_col(2)
-        [2, 5]
         """
         # TODO: your solution here
 
@@ -91,20 +95,21 @@ class Board:
         any:
             actual item
 
-        >>> board = Board(3, 2, grid=[i for i in range(6)])
+        >>> board = Board(3, 2, grid=[5, 4, 1, 3, 0, 6])
         >>> print(board)
         =====
-        0 1 2
-        3 4 5
+        5 4 1
+        3 0 6
         =====
-        >>> board.get_item(1, 0)
-        1
-        >>> board.get_item(0, 0)
-        0
-        >>> board.get_item(0, 1)
-        3
-        >>> board.get_item(2, 1)
-        5
+        >>> [board.get_item(x, y) for y in range(2) for x in range(3)]
+        [5, 4, 1, 3, 0, 6]
+        >>> board2 = Board(4, 1, grid=[9, 2, 4, 1])
+        >>> print(board2)
+        =======
+        9 2 4 1
+        =======
+        >>> [board2.get_item(x, y) for y in range(1) for x in range(4)]
+        [9, 2, 4, 1]
         """
         # TODO: your solution here
 
@@ -185,6 +190,8 @@ class Board:
         0 1 2
         3 4 5
         =====
+        >>> sum([board.valid_coordinate((x, y)) for x in range(3) for y in range(2)]) == 6
+        True
         >>> board.valid_coordinate((2, 1))
         True
         >>> board.valid_coordinate((1, 1))
